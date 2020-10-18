@@ -1,0 +1,55 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="first">
+    <label>
+      Name:
+      <input id="textboxid" type="text" formControlName="name" required>
+    </label>
+    </div>
+
+    <div class="sec">
+    <label>
+      Email:
+      <input id="textboxid" type="text" formControlName="email" required>
+    </label>
+    </div>
+
+    <div class ="feed">
+    <label>
+        Feedback:
+        <div style="color: black">
+        <input type="radio" formControlName="feedback" value="Great" required>
+        <label>Great</label></div><br>
+        <div style="color: black">
+        <input type="radio" formControlName="feedback" value="Okay" required>
+        <label>Okay</label></div><br>
+        <div style="color: black">
+        <input type="radio" formControlName="feedback" value="Not Good" required>
+        <label>Not Good</label></div><br>
+    </label>
+    </div>
+
+    <div class="feed">
+    <label>
+        Comments:
+        <div style="margin-top: 5px"><textarea formControlName="comment" rows="5" cols="31"></textarea></div>
+    </label>
+    </div>
+
+  <button type="submit" class="lol">Submit</button>
+
+</form>
+
+<p style="text-align: center;font-size: 15px">
+    Initial form value: {{ initdata | json }}
+</p>
+
+
+
+
+<p style="text-align: center;font-size: 15px" onsubmit>
+    Form value: {{ profileForm.value | json }}
+</p>
+
+<p style="text-align: center;font-size: 15px;margin-right: 50px">
+    Form Status: {{ profileForm.status }}
+</p>
