@@ -41,7 +41,6 @@ export class DataService {
 	addData(form: dataForm)
 	{
     	const body=JSON.stringify(form);
-    	console.log("yes"+body)
 		return this.http.post(this.postUrl,body)
 		    .pipe(
       			catchError(this.handleError)
